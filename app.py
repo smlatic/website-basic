@@ -1,3 +1,4 @@
+from PIL import Image
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
@@ -19,7 +20,8 @@ def load_lottieurl(url):
 
 # --- LOAD ASSETS ---
 lottie_code = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_Lpuvp7YT5K.json")
-
+image_ume = Image.open("images/köket.png")
+image_kro = Image.open("images/kro.png")
 
  
 
@@ -58,4 +60,39 @@ with st.container():
 
     with right_column:
         st_lottie(lottie_code, height=300, key="coding")
-        
+
+
+#----- PROJECTs-----
+
+# --- Project1 ---
+with st.container():
+    st.write("---")
+    st.header("My Projects")
+    st.write("##")
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+         st.image(image_kro)
+    with text_column:
+        st.subheader("Lottie Animation")
+        st.write("""
+        Some text here about something
+        yada yada
+
+        """)
+        st.markdown("[Watch Video...](https://www.youtube.com/watch?v=X1gM3oIXKmE)")
+
+
+# --- Project2 ---
+with st.container():
+
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+         st.image(image_ume)
+    with text_column:
+        st.subheader("Waz happennin")
+        st.write("""
+        Some text here about something
+        yada yada
+
+        """)
+        st.markdown("[Watch Video...](https://www.youtube.com/watch?v=X1gM3oIXKmE)")
