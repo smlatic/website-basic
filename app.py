@@ -4,6 +4,13 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 
 
+# -- THEME
+# create .streamlit folder, and a config.toml file
+# paste from 
+# https://blog.streamlit.io/introducing-theming/
+
+
+
 # Emoji-list https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Edin Webtest", page_icon=":tada:", layout="wide")
 
@@ -19,19 +26,33 @@ def load_lottieurl(url):
 
 
 # --- LOAD ASSETS ---
+lottie_profile = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_bfgchzaf.json")
 lottie_code = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_Lpuvp7YT5K.json")
-image_ume = Image.open("images/köket.png")
-image_kro = Image.open("images/kro.png")
+image_ume = Image.open("images/picardwot.png")
+image_kro = Image.open("images/facepalm.png")
 
  
+
+# --- Sidebar ---
+with st.sidebar:
+    st.header("Header title")
+    st.subheader("This is the sub-header")
+    st.write("asdklasdasdlas ")
+
+
+
 
 # --- HEADER ---
 with st.container():
     st.subheader("Hi, I am Edin :wave:")
-    st.title("This is the st.Title yooo")
-    st.write("This is st.write so lets see how this text turns out.")
-    st.write("[Github >](https://github.com/smlatic/Portfolio-Edin-Smlatic)")
 
+    left1_column, right1_column = st.columns(2)
+    with left1_column:
+        st.title("And i AM this and that")
+        st.write("sometimes i do stuff and sometimes i dont")
+        st.write("[Github >](https://github.com/smlatic/Portfolio-Edin-Smlatic)")
+    with right1_column:
+        st_lottie(lottie_profile, height=300)
 
 
 # --- What I doez
@@ -43,23 +64,22 @@ with st.container():
     with left_column:
         st.header("What i Doez")
         st.write("##")
-        st.write("""
-        
-        SDJKAJDKSJKDJAKSDKAJD
-         -asdasdasd
-         - asdasdasd
-         - asdasd
-         -asdasda
-
-        asdasdasd
-        asdasdasd
-        
-        """)
+        st.write(
+            """
+            I doez this stuff:
+            -  looking for a way to leverage the power of Python in their day-to-day work and some fancy text.
+            -  struggling with repetitive tasks in Excel and are looking for a way to use Python and VBA or something.
+            -  Data Analysis & Data Science to perform meaningful and impactful analyses ofc to change livez.
+            -  working with Excel and found themselves thinking nothing about something.
+            If this sounds interesting to you, then it sounds interesteing.
+            """
+        )
         st.write("[Github >](https://github.com/smlatic/Portfolio-Edin-Smlatic)")
         
 
     with right_column:
         st_lottie(lottie_code, height=300, key="coding")
+
 
 
 #----- PROJECTs-----
