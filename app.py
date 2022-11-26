@@ -10,10 +10,33 @@ from streamlit_lottie import st_lottie
 # https://blog.streamlit.io/introducing-theming/
 
 
+# -- HIDE MENU AND FOOTER --
+hide_menu =  """
+<style>
+#MainMenu {
+visibility:hidden;
+}
+footer {
+visibility:hidden;    
+}
+</style>
+
+"""
+
 
 # Emoji-list https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Edin Webtest", page_icon=":tada:", layout="wide")
 
+# Hide menu after set page config
+st.markdown(hide_menu, unsafe_allow_html=True)
+st.markdown("""
+        <style>
+        .css-15zrgzn {display: none}
+        .css-eczf16 {display: none}
+        .css-jn99sy {display: none}
+        </style>
+        """, unsafe_allow_html=True)
+        #TODO Find Theme and put it in
 
 
 
@@ -48,11 +71,11 @@ with st.container():
 
     left1_column, right1_column = st.columns(2)
     with left1_column:
-        st.title("And i AM this and that")
-        st.write("sometimes i do stuff and sometimes i dont")
+        st.title("PrO WeBDevelOper")
+        st.write("cringy quote, never stop dreamin!")
         st.write("[Github >](https://github.com/smlatic/Portfolio-Edin-Smlatic)")
     with right1_column:
-        st_lottie(lottie_profile, height=300)
+        st_lottie(lottie_profile, height=200)
 
 
 # --- What I doez
@@ -67,18 +90,17 @@ with st.container():
         st.write(
             """
             I doez this stuff:
-            -  looking for a way to leverage the power of Python in their day-to-day work and some fancy text.
-            -  struggling with repetitive tasks in Excel and are looking for a way to use Python and VBA or something.
-            -  Data Analysis & Data Science to perform meaningful and impactful analyses ofc to change livez.
-            -  working with Excel and found themselves thinking nothing about something.
-            If this sounds interesting to you, then it sounds interesteing.
+            -  lestiae quas vel sint commodi repudiandae consequuntur vol
+            -  Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+            -  Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+            -  Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
             """
         )
         st.write("[Github >](https://github.com/smlatic/Portfolio-Edin-Smlatic)")
         
 
     with right_column:
-        st_lottie(lottie_code, height=300, key="coding")
+        st_lottie(lottie_code, height=400, key="coding")
 
 
 
@@ -93,7 +115,7 @@ with st.container():
     with image_column:
          st.image(image_kro)
     with text_column:
-        st.subheader("Lottie Animation")
+        st.subheader("Got nuthin")
         st.write("""
         Some text here about something
         yada yada
@@ -109,7 +131,7 @@ with st.container():
     with image_column:
          st.image(image_ume)
     with text_column:
-        st.subheader("Waz happennin")
+        st.subheader("Got nuthin part 2")
         st.write("""
         Some text here about something
         yada yada
